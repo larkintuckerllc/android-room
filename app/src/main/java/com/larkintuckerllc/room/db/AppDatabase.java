@@ -13,7 +13,7 @@ public abstract class AppDatabase extends RoomDatabase {
     public abstract TodoDao todoModel();
 
     // TODO: PERSIST DB
-    public static AppDatabase getInMemoryDatabase(Context context) {
+    public static AppDatabase getDatabase(Context context) {
         if (INSTANCE == null) {
             INSTANCE =
                 Room.databaseBuilder(context.getApplicationContext(), AppDatabase.class, "com.larkintuckerllc.room.db")

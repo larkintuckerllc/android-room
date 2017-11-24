@@ -15,12 +15,8 @@ public class TodosViewModel extends AndroidViewModel {
 
     public TodosViewModel(Application application) {
         super(application);
-        createDb();
+        mDb = AppDatabase.getDatabase(getApplication());
         todos = mDb.todoModel().findAllTodos();
-    }
-
-    public void createDb() {
-        mDb = AppDatabase.getInMemoryDatabase(getApplication());
     }
 
     public void addTodo(String name, long date) {
